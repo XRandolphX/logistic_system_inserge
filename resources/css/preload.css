@@ -1,0 +1,71 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.contedor_carga {
+  background-color: rgba(248, 248, 248, 0.849);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.carga,
+.carga::before,
+.carga::after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation: loader 1.5s;
+  -webkit-animation: loader 1.5s infinite ease-in-out;
+}
+
+.carga {
+  color: #4685fa;
+  font-size: 13px;
+  position: relative;
+  animation-delay: -0.16s;
+}
+
+.carga::before,
+.carga::after {
+  content: "";
+  position: absolute;
+  top: 0;
+}
+
+.carga::before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+
+.carga::after {
+  left: 3.5em;
+}
+
+@keyframes loader{
+
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
